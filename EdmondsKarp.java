@@ -12,6 +12,10 @@ import java.util.Collection;
 import java.util.Map;
 import javafx.util.Pair;
 
+/**
+ * @author Alexander J. Heffernan
+ * @version 15/05/2024
+ */
 public class EdmondsKarp {
     private static Map<String,Edge> edges; 
     private static ArrayList<Pair<ArrayList<String>, Integer>> augmentationPaths = null;
@@ -40,30 +44,6 @@ public class EdmondsKarp {
             reverseEdge.fromCity().addEdgeId(id + "");
             id++;
         }
-    }
-
-    // Method to print Residual Graph 
-    public static void printResidualGraphData(Graph graph){
-        System.out.println("\nResidual Graph");
-        System.out.println("\n=============================\nCities:");
-        for (City city : graph.getCities().values()){
-            System.out.print(city.toString());
-
-            // for each city display the out edges 
-            for(String eId: city.getEdgeIds()){
-                System.out.print("["+eId+"] ");
-            }
-            System.out.println();
-        }
-        System.out.println("\n=============================\nEdges(Original(with even Id) and Reverse(with odd Id):");
-        edges.forEach((eId, edge)->
-                System.out.println("["+eId+"] " +edge.toString()));
-
-        System.out.println("===============");
-    }
-
-    public static Edge getEdge(String id){
-        return edges.get(id);
     }
     
     /**
@@ -208,5 +188,9 @@ public class EdmondsKarp {
             edge.setCapacity(originalData.getKey());
             edge.setFlow(originalData.getValue());
         }
+    }
+
+    public static Edge getEdge(String id){
+        return edges.get(id);
     }
 }
