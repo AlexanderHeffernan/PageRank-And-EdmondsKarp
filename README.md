@@ -1,4 +1,4 @@
-### PageRank and EdmondsKarp Algorithms Implementation
+### Page Rank and Edmonds-Karp Algorithms Implementations
 
 This repository contains implementations of the PageRank algorithm and the Edmonds-Karp alogirithm for maximum flow computation. These algorithms were developed as part of an assignment to demonstrate proficiency in graph algorithms and network flow optimization.
 
