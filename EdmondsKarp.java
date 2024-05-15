@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.Map;
 import javafx.util.Pair;
 
-public class EdmondKarp {
+public class EdmondsKarp {
     private static Map<String,Edge> edges; 
     private static ArrayList<Pair<ArrayList<String>, Integer>> augmentationPaths = null;
     private static Map<String, Pair<Integer, Integer>> originalEdgeData;
