@@ -6,14 +6,10 @@ import java.util.HashMap;
 import java.util.Collections;
 
 /**
-* Write a description of class PageRank here.
-*
-* @author (your name)
-* @version (a version number or a date)
+* @author Alexander J. Heffernan
+* @version 15/05/2024
 */
-public class PageRank
-{
-    //class members 
+public class PageRank {
     private static double dampingFactor = .85;
     private static int iter = 10;
     private static Map<String, Double> pageRanks = null;
@@ -35,29 +31,6 @@ public class PageRank
             toNode.addFromLinks(fromNode);
             fromNode.addToLinks(toNode);
         }
-    }
-
-    public static void printPageRankGraphData(Graph graph){
-        System.out.println("\nPage Rank Graph");
-
-        for (Gnode node : graph.getNodes().values()){
-            System.out.print("\nNode: "+node.toString());
-            //for each node display the in edges 
-            System.out.print("\nIn links to nodes:");
-            for(Gnode c:node.getFromLinks()){
-
-                System.out.print("["+c.getId()+"] ");
-            }
-
-            System.out.print("\nOut links to nodes:");
-            //for each node display the out edges 
-            for(Gnode c: node.getToLinks()){
-                System.out.print("["+c.getId()+"] ");
-            }
-            System.out.println();;
-
-        }    
-        System.out.println("=================");
     }
     
     /**
